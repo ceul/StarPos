@@ -459,9 +459,9 @@ public class JRootApp extends JPanel implements AppView, DeviceMonitorEventListe
         String newText = m_props.getProperty("start.text");
         if (newText != null) {
             if (newText.equals("")){
-            jLabel1.setText("<html><center>effectivePOS - Seguro - Confiable <br>" +
-            "Copyright \u00A9 2018 facilPOS <br>" +
-            "http://www.effectivepos.com.co<br>" +
+            jLabel1.setText("<html><center>StarPOS - Seguro - Confiable <br>" +
+            "Copyright \u00A9 2018 StarPOS <br>" +
+            "http://www.starpos.co<br>" +
             "</center></html>");
             } else {
                 try {    

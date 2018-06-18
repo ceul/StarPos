@@ -3,8 +3,27 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/home/ceul/app/starPOS/src-pos/com/openbravo/pos/forms/JPanelView.java</file>
+            <file>file:/home/ceul/app/starPOS/src-pos/com/openbravo/pos/forms/DataLogicSales.java</file>
+            <file>file:/home/ceul/app/starPOS/src-beans/com/openbravo/beans/LocaleResources.java</file>
+            <file>file:/home/ceul/app/starPOS/src-pos/com/openbravo/pos/forms/JRootKiosk.java</file>
+            <file>file:/home/ceul/app/starPOS/src-pos/com/openbravo/pos/forms/JRootFrame.java</file>
+            <file>file:/home/ceul/app/starPOS/locales/Spanish/locales/pos_messages_es.properties</file>
+            <file>file:/home/ceul/app/starPOS/src-pos/com/openbravo/pos/forms/StartPOS.java</file>
+            <file>file:/home/ceul/app/starPOS/src-pos/com/openbravo/pos/templates/Window.Title.txt</file>
             <file>file:/home/ceul/app/starPOS/src-pos/com/openbravo/pos/forms/JPrincipalApp.java</file>
-            <file>file:/home/ceul/app/starPOS/src-pos/com/openbravo/pos/forms/JRootApp.java</file>
+            <file>file:/home/ceul/app/starPOS/src-pos/com/openbravo/pos/forms/AppLocal.java</file>
+            <file>file:/home/ceul/app/starPOS/src-pos/com/openbravo/pos/forms/AppProperties.java</file>
+            <file>file:/home/ceul/app/starPOS/src-pos/com/openbravo/pos/scripts/MySQL-upgrade-3.70.sql</file>
+            <file>file:/home/ceul/app/starPOS/locales/Colombian/locales/erp_messages_es_CO.properties</file>
+            <file>file:/home/ceul/app/starPOS/locales/Colombian/locales/pos_messages_es_CO.properties</file>
+            <file>file:/home/ceul/app/starPOS/src-pos/com/openbravo/pos/forms/DataLogicSystem.java</file>
+            <file>file:/home/ceul/app/starPOS/src-pos/com/openbravo/pos/inventory/UomEditor.java</file>
+            <file>file:/home/ceul/app/starPOS/src-pos/com/openbravo/pos/inventory/ProductsEditor.java</file>
+            <file>file:/home/ceul/app/starPOS/src-pos/com/openbravo/pos/templates/Menu.Root.txt</file>
+            <file>file:/home/ceul/app/starPOS/src-pos/com/openbravo/pos/forms/AppConfig.java</file>
+            <file>file:/home/ceul/app/starPOS/nbproject/project.properties</file>
+            <file>file:/home/ceul/app/starPOS/derby.log</file>
         </group>
     </open-files>
 </project-private>

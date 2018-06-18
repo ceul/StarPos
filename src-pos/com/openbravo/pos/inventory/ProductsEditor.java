@@ -42,6 +42,7 @@ import java.util.List;
 import java.util.UUID;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JCheckBox;
 import javax.swing.JOptionPane;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
@@ -134,6 +135,7 @@ public final class ProductsEditor extends javax.swing.JPanel implements EditorRe
         m_jPriceBuy.getDocument().addDocumentListener(dirty);
         m_jPriceSell.getDocument().addDocumentListener(dirty);
         m_jPrintTo.addActionListener(dirty);
+        jcboFlag.addActionListener(dirty);
         
 // Tab Stock        
         m_jInCatalog.addActionListener(dirty);
@@ -236,7 +238,8 @@ public final class ProductsEditor extends javax.swing.JPanel implements EditorRe
         m_UomModel.setSelectedKey(0);        
         m_jPriceBuy.setText("0");
         setPriceSell(null);
-        m_SuppliersModel.setSelectedKey(0);               
+        m_SuppliersModel.setSelectedKey(0);         
+        jcboFlag.setSelected(false);
         
 // Tab Stock        
         m_jInCatalog.setSelected(false);
@@ -336,7 +339,8 @@ public final class ProductsEditor extends javax.swing.JPanel implements EditorRe
         m_jPriceBuy.setText("0");
         setPriceSell(null);        
 //        m_SuppliersModel.setSelectedKey(0);
-        m_jSupplier.setSelectedIndex(selectedIndex);        
+        m_jSupplier.setSelectedIndex(selectedIndex);    
+        jcboFlag.setSelected(false);
         
 // Tab Stock        
         m_jInCatalog.setSelected(true);
@@ -418,7 +422,7 @@ public final class ProductsEditor extends javax.swing.JPanel implements EditorRe
     @Override
     public Object createValue() throws BasicException {
 
-        Object[] myprod = new Object[31];        
+        Object[] myprod = new Object[32];        
 
         myprod[0] = m_oId == null ? UUID.randomUUID().toString() : m_oId;        
         myprod[1] = m_jRef.getText();
@@ -449,9 +453,9 @@ public final class ProductsEditor extends javax.swing.JPanel implements EditorRe
         myprod[26] = m_jPrintTo.getSelectedItem().toString();        
         myprod[27] = m_SuppliersModel.getSelectedKey();
         myprod[28] = m_UomModel.getSelectedKey();
-
-        myprod[29] = m_jInCatalog.isSelected();
-        myprod[30] = Formats.INT.parseValue(m_jCatalogOrder.getText());
+        myprod[29] = Boolean.valueOf(jcboFlag.isSelected());
+        myprod[30] = m_jInCatalog.isSelected();
+        myprod[31] = Formats.INT.parseValue(m_jCatalogOrder.getText());
 
         return myprod;        
     }
@@ -499,9 +503,9 @@ public final class ProductsEditor extends javax.swing.JPanel implements EditorRe
         m_jPrintTo.setSelectedItem(myprod[26]);         
         m_SuppliersModel.setSelectedKey(myprod[27]);
         m_UomModel.setSelectedKey(myprod[28]);        
-        
-        m_jInCatalog.setSelected(((Boolean)myprod[29]));
-        m_jCatalogOrder.setText(Formats.INT.formatValue(myprod[30]));
+        jcboFlag.setSelected(((Boolean)myprod[29]));
+        m_jInCatalog.setSelected(((Boolean)myprod[30]));
+        m_jCatalogOrder.setText(Formats.INT.formatValue(myprod[31]));
         
         txtAttributes.setCaretPosition(0);
         reportlock = false;
@@ -600,10 +604,10 @@ public final class ProductsEditor extends javax.swing.JPanel implements EditorRe
         m_jPrintTo.setSelectedItem(myprod[26]);                
         m_SuppliersModel.setSelectedKey(myprod[27]);
         m_UomModel.setSelectedKey(myprod[28]);        
+        jcboFlag.setSelected(((Boolean)myprod[29]));
+        m_jInCatalog.setSelected(((Boolean)myprod[30]));
+        m_jCatalogOrder.setText(Formats.INT.formatValue(myprod[31]));
         
-        m_jInCatalog.setSelected(((Boolean)myprod[29]));
-        m_jCatalogOrder.setText(Formats.INT.formatValue(myprod[30]));
-
         txtAttributes.setCaretPosition(0);
         
         reportlock = false;
@@ -623,6 +627,7 @@ public final class ProductsEditor extends javax.swing.JPanel implements EditorRe
         m_jPriceSellTax.setEnabled(false);
         m_jmargin.setEnabled(false);
         m_jPrintTo.setEnabled(false);
+        jcboFlag.setSelected(false);
         
 // Tab Stock
         m_jInCatalog.setEnabled(false);
@@ -1096,6 +1101,7 @@ public final class ProductsEditor extends javax.swing.JPanel implements EditorRe
         jLabel17 = new javax.swing.JLabel();
         m_jSupplier = new javax.swing.JComboBox();
         webBtnSupplier = new com.alee.laf.button.WebButton();
+        jcboFlag = new javax.swing.JCheckBox();
         jPanel2 = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
         m_jstockcost = new javax.swing.JTextField();
@@ -1251,7 +1257,7 @@ public final class ProductsEditor extends javax.swing.JPanel implements EditorRe
 
         m_jmargin.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         m_jmargin.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
-        m_jmargin.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        m_jmargin.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         m_jmargin.setEnabled(false);
         m_jmargin.setPreferredSize(new java.awt.Dimension(110, 30));
 
@@ -1309,6 +1315,13 @@ public final class ProductsEditor extends javax.swing.JPanel implements EditorRe
             }
         });
 
+        jcboFlag.setLabel("jcboFlag");
+        jcboFlag.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jcboFlagActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -1356,7 +1369,10 @@ public final class ProductsEditor extends javax.swing.JPanel implements EditorRe
                                 .addComponent(m_jAtt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
                                 .addComponent(m_jVerpatrib, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(m_jTax, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(m_jTax, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jcboFlag))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(m_jPriceSellTax, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
@@ -1415,7 +1431,8 @@ public final class ProductsEditor extends javax.swing.JPanel implements EditorRe
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(m_jTax, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jcboFlag))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1614,7 +1631,7 @@ public final class ProductsEditor extends javax.swing.JPanel implements EditorRe
                             .addComponent(m_jInCatalog, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 115, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -1658,7 +1675,7 @@ public final class ProductsEditor extends javax.swing.JPanel implements EditorRe
                                 .addComponent(m_jPrintTo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(jBtnShowTrans, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addContainerGap(25, Short.MAX_VALUE))))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2087,6 +2104,10 @@ public final class ProductsEditor extends javax.swing.JPanel implements EditorRe
         
     }//GEN-LAST:event_webBtnSupplierActionPerformed
 
+    private void jcboFlagActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcboFlagActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jcboFlagActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private com.alee.extended.colorchooser.WebColorChooserField colourChooser;
     private javax.swing.JButton jBtnShowTrans;
@@ -2128,6 +2149,7 @@ public final class ProductsEditor extends javax.swing.JPanel implements EditorRe
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTabbedPane jTabbedPane1;
     private com.alee.laf.table.WebTable jTableProductStock;
+    private javax.swing.JCheckBox jcboFlag;
     private javax.swing.JComboBox m_jAtt;
     private javax.swing.JTextField m_jCatalogOrder;
     private javax.swing.JComboBox m_jCategory;

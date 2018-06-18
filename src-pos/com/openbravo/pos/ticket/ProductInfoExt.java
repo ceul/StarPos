@@ -60,6 +60,7 @@ public class ProductInfoExt {
     protected boolean m_bVerpatrib;
     protected String m_sTextTip;
     protected boolean m_bWarranty;
+    protected boolean flag;
     public double m_dStockUnits;
     public String m_sPrinter;
     public String supplierid;
@@ -94,7 +95,8 @@ public class ProductInfoExt {
         m_dStockUnits = 0.0;
         m_sPrinter = null;
         supplierid = "0";
-        uomid = "0";        
+        uomid = "0";    
+        flag = false;
 
     }
 
@@ -354,6 +356,7 @@ public class ProductInfoExt {
                 product.m_sPrinter = dr.getString(27);
                 product.supplierid = dr.getString(28);
                 product.uomid = dr.getString(29);
+                product.flag = dr.getBoolean(30);
 
                 return product;
             }

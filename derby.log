@@ -1,11 +1,11 @@
 ----------------------------------------------------------------
 Fri Dec 15 11:23:06 COT 2017:
 Booting Derby version The Apache Software Foundation - Apache Derby - 10.10.2.0 - (1582446): instance a816c00e-0160-5afc-832a-000002833948 
-on database directory /home/amartinez/facilpos-database with class loader sun.misc.Launcher$AppClassLoader@1c2faae 
-Loaded from file:/home/amartinez/NetBeansProjects/facilPOS/lib/derby-10.10.2.0.jar
+on database directory /home/amartinez/starpos-database with class loader sun.misc.Launcher$AppClassLoader@1c2faae 
+Loaded from file:/home/amartinez/NetBeansProjects/StarPos/lib/derby-10.10.2.0.jar
 java.vendor=Oracle Corporation
 java.runtime.version=1.8.0_151-b12
-user.dir=/home/amartinez/NetBeansProjects/facilPOS
+user.dir=/home/amartinez/NetBeansProjects/StarPOS
 os.name=Linux
 os.arch=i386
 os.version=3.16.0-4-686-pae

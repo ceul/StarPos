@@ -190,7 +190,8 @@ ALTER TABLE `products`
 
 	ADD COLUMN `printto` varchar(255)  COLLATE utf8_general_ci NULL DEFAULT '1' after `stockunits` , 
 	ADD COLUMN `supplier` varchar(255)  COLLATE utf8_general_ci NULL after `printto` , 
-	ADD COLUMN `uom` varchar(255)  COLLATE utf8_general_ci NULL DEFAULT '0' after `supplier` , 
+	ADD COLUMN `uom` varchar(255)  COLLATE utf8_general_ci NULL DEFAULT '0' after `supplier` ,
+        ADD COLUMN `flag` boolean  COLLATE utf8_general_ci NULL DEFAULT b'0' after `uom` ,
 	DROP COLUMN `ISKITCHEN` , 
 	DROP KEY `PRIMARY`, ADD PRIMARY KEY(`id`) , 
 	DROP KEY `PRODUCTS_ATTRSET_FK` , 

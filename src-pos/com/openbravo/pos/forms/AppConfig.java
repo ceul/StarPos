@@ -274,8 +274,8 @@ public class AppConfig implements AppProperties {
         m_propsconfig.setProperty("db.driver", "com.mysql.jdbc.Driver");
 
 // primary DB
-        m_propsconfig.setProperty("db.name", "facilpos");
-        m_propsconfig.setProperty("db.URL", "jdbc:mysql://localhost:3306/facilpos"); 
+        m_propsconfig.setProperty("db.name", "starpos");
+        m_propsconfig.setProperty("db.URL", "jdbc:mysql://localhost:3306/starpos"); 
         m_propsconfig.setProperty("db.user", "root");
         m_propsconfig.setProperty("db.password", "admin");     
 
@@ -335,7 +335,7 @@ public class AppConfig implements AppProperties {
         m_propsconfig.setProperty("paper.standard.mediasizename", "A4");
 
         m_propsconfig.setProperty("tkt.header1", "Star POS");
-        m_propsconfig.setProperty("tkt.header2", "Efectivo");
+        m_propsconfig.setProperty("tkt.header2", "Made in Colombia");
         m_propsconfig.setProperty("tkt.header3", "Copyright (c) 2018 StarPOS");
         m_propsconfig.setProperty("tkt.header4", "Change header text in Configuration");                
         
