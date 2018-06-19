@@ -316,6 +316,7 @@ CREATE TABLE `products` (
 	`printto` varchar(255) default '1',
 	`supplier` varchar(255) default NULL,
         `uom` varchar(255) default '0',
+        `flag` bit(1) NOT NULL default b'0',
 
 	PRIMARY KEY  ( `id` ),
 	KEY `products_attrset_fx` ( `attributeset_id` ),

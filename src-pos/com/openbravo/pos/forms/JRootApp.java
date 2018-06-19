@@ -950,10 +950,10 @@ public class JRootApp extends JPanel implements AppView, DeviceMonitorEventListe
 
         jLabel1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/facilpos.png"))); // NOI18N
-        jLabel1.setText("<html><center>fácilPOS - Seguro - Confiable <br>" +
-            "Copyright \u00A9 2018 facilPOS <br>" +
-            "http://www.facilpos.com<br>" +
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/logo.png"))); // NOI18N
+        jLabel1.setText("<html><center>StarPOS - Seguro - Confiable <br>" +
+            "Copyright \u00A9 2018 StarPOS <br>" +
+            "http://www.starpos.co<br>" +
             "</center></html>");
         jLabel1.setAlignmentX(0.5F);
         jLabel1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
