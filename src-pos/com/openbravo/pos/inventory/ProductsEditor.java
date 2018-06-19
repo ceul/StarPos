@@ -1167,7 +1167,7 @@ public final class ProductsEditor extends javax.swing.JPanel implements EditorRe
         m_jTitle.setOpaque(true);
         m_jTitle.setPreferredSize(new java.awt.Dimension(260, 25));
         add(m_jTitle);
-        m_jTitle.setBounds(365, 5, 260, 25);
+        m_jTitle.setBounds(435, 5, 190, 25);
 
         jTabbedPane1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jTabbedPane1.setPreferredSize(new java.awt.Dimension(620, 420));

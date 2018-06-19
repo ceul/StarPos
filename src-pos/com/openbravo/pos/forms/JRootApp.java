@@ -927,16 +927,17 @@ public class JRootApp extends JPanel implements AppView, DeviceMonitorEventListe
         m_jLblTitle.setText("Window.Title");
         m_jPanelTitle.add(m_jLblTitle, java.awt.BorderLayout.CENTER);
 
-        poweredby.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        poweredby.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/poweredby_uni.png"))); // NOI18N
+        poweredby.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        poweredby.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/poweredby_star.png"))); // NOI18N
         poweredby.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 5, 0, 5));
-        poweredby.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        poweredby.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         poweredby.setMaximumSize(new java.awt.Dimension(180, 34));
         poweredby.setPreferredSize(new java.awt.Dimension(180, 34));
         m_jPanelTitle.add(poweredby, java.awt.BorderLayout.LINE_END);
 
         jLabel2.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel2.setAutoscrolls(true);
         jLabel2.setPreferredSize(new java.awt.Dimension(180, 34));
         m_jPanelTitle.add(jLabel2, java.awt.BorderLayout.LINE_START);
 
@@ -1059,6 +1060,9 @@ public class JRootApp extends JPanel implements AppView, DeviceMonitorEventListe
         add(m_jPanelContainer, java.awt.BorderLayout.CENTER);
 
         m_jPanelDown.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 0, 0, 0, javax.swing.UIManager.getDefaults().getColor("Button.darkShadow")));
+        m_jPanelDown.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        m_jPanelDown.setMinimumSize(new java.awt.Dimension(573, 20));
+        m_jPanelDown.setPreferredSize(new java.awt.Dimension(430, 40));
         m_jPanelDown.setLayout(new java.awt.BorderLayout());
 
         m_jHost.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N

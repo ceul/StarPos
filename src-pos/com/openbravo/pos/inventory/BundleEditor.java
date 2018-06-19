@@ -307,10 +307,11 @@ public class BundleEditor extends javax.swing.JPanel implements EditorRecord {
 
         jLabel4.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel4.setText(AppLocal.getIntString("label.prodbarcode")); // NOI18N
+        jLabel4.setToolTipText("");
         jLabel4.setPreferredSize(new java.awt.Dimension(100, 30));
 
         jLabel1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jLabel1.setText("Quantity");
+        jLabel1.setText("Cantidad");
         jLabel1.setPreferredSize(new java.awt.Dimension(110, 30));
 
         m_jQuantity.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
